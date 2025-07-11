@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Africa Retold | Pan-Africanism & Leadership Reform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #00843D;
+            --primary-yellow: #FCD116;
+            --primary-red: #CE1126;
+            --primary-black: #000000;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-black);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-black) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--primary-yellow);
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+        }
+
+        .logo-text span {
+            color: var(--primary-yellow);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-yellow);
+            transition: var(--transition);
+        }
+
+        nav a:hover:after {
+            width: 100%;
+        }
+
+        .nav-btn {
+            background-color: var(--primary-red);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-left: 1rem;
+        }
+
+        .nav-btn:hover {
+            background-color: #a50d1e;
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--primary-yellow);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 0 10px;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-btn:hover {
+            background-color: #a50d1e;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .hero-btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-yellow);
+        }
+
+        .hero-btn-outline:hover {
+            background-color: var(--primary-yellow);
+            color: var(--primary-black);
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background-color: var(--light-gray);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-green);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-green);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1508317469940-e3de49ba902e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1351&q=80') center center/cover;
+        }
+
+        /* Mission Section */
+        .mission {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-black) 100%);
+            color: white;
+        }
+
+        .mission .section-title h2 {
+            color: white;
+        }
+
+        .mission .section-title h2:after {
+            background-color: var(--primary-yellow);
+        }
+
+        .mission-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .mission-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mission-card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .mission-icon {
+            font-size: 3rem;
+            color: var(--primary-yellow);
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        /* Initiatives Section */
+        .initiatives {
+            padding: 5rem 0;
+            background-color: white;
+        }
+
+        .initiatives-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .initiative-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .initiative-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .initiative-img {
+            height: 200px;
+            background-color: var(--primary-green);
+        }
+
+        .initiative-content {
+            padding: 1.5rem;
+        }
+
+        .initiative-content h3 {
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .initiative-content p {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .initiative-link {
+            color: var(--primary-red);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Leadership Section */
+        .leadership {
+            padding: 5rem 0;
+            background-color: var(--light-gray);
+        }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .leader-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .leader-card:hover {
+            transform: scale(1.03);
+        }
+
+        .leader-img {
+            height: 250px;
+            background-color: var(--primary-black);
+        }
+
+        .leader-info {
+            padding: 1.5rem 1rem;
+        }
+
+        .leader-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-black);
+        }
+
+        .leader-info p {
+            color: var(--primary-red);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Stories Section */
+        .stories {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .stories-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .story-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            background: white;
+        }
+        
+        .story-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .story-img {
+            height: 200px;
+            background-color: var(--primary-yellow);
+        }
+        
+        .story-content {
+            padding: 1.5rem;
+        }
+        
+        .story-content h3 {
+            color: var(--primary-black);
+            margin-bottom: 0.5rem;
+        }
+        
+        .story-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--primary-green);
+        }
+        
+        .story-content p {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .story-link {
+            color: var(--primary-red);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-yellow) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .newsletter-form button {
+            background-color: var(--primary-black);
+            color: white;
+            border: none;
+            padding: 0 2rem;
+            border-radius: 0 30px 30px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            background-color: #333;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-black);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h3 {
+            color: var(--primary-yellow);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-yellow);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-red);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-btns {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero-btn {
+                margin: 5px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                height: 75vh;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .newsletter-form input,
+            .newsletter-form button {
+                border-radius: 30px;
+                padding: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-globe-africa"></i>
+                </div>
+                <div class="logo-text">
+                    AFRICA<span>RETOLD</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#mission">Mission</a></li>
+                    <li><a href="#initiatives">Initiatives</a></li>
+                    <li><a href="#leadership">Leadership</a></li>
+                    <li><a href="#stories">Stories</a></li>
+                </ul>
+                <button class="nav-btn">Get Involved</button>
+            </nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Reimagining Africa's <span>Future</span> Through Unity and Leadership</h1>
+            <p>Join the movement for Pan-Africanism, better governance, and sustainable development across the African continent.</p>
+            <div class="hero-btns">
+                <a href="#mission" class="hero-btn">Our Mission</a>
+                <a href="#initiatives" class="hero-btn hero-btn-outline">Get Involved</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Africa Retold</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Vision for a United Africa</h3>
+                    <p>Africa Retold is a movement dedicated to the principles of Pan-Africanism, advocating for unity, self-determination, and the collective advancement of African people worldwide.</p>
+                    <p>We believe in an Africa that controls its own destiny, where leaders are accountable to their people, and where the continent's rich resources benefit all its citizens.</p>
+                    <p>Our organization was founded by a diverse group of African intellectuals, activists, and diaspora members committed to rewriting Africa's narrative from one of exploitation to one of empowerment.</p>
+                    <a href="#" class="hero-btn">Learn More</a>
+                </div>
+                <div class="about-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission" id="mission">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Core Mission</h2>
+            </div>
+            <div class="mission-cards">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Pan-African Unity</h3>
+                    <p>Promoting solidarity among all people of African descent worldwide and fostering a sense of shared identity and purpose.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Accountable Leadership</h3>
+                    <p>Advocating for transparent, ethical governance and holding leaders accountable to their citizens.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Education & Empowerment</h3>
+                    <p>Providing educational resources and platforms to empower Africans to shape their own future.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Initiatives Section -->
+    <section class="initiatives" id="initiatives">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Initiatives</h2>
+            </div>
+            <div class="initiatives-container">
+                <div class="initiative-card">
+                    <div class="initiative-img" style="background: url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3') center center/cover;"></div>
+                    <div class="initiative-content">
+                        <h3>Youth Leadership Program</h3>
+                        <p>Developing the next generation of African leaders through mentorship, training, and networking opportunities.</p>
+                        <a href="#" class="initiative-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="initiative-card">
+                    <div class="initiative-img" style="background: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3') center center/cover;"></div>
+                    <div class="initiative-content">
+                        <h3>Policy Reform Advocacy</h3>
+                        <p>Influencing policy at national and continental levels to promote good governance and sustainable development.</p>
+                        <a href="#" class="initiative-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="initiative-card">
+                    <div class="initiative-img" style="background: url('https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?ixlib=rb-4.0.3') center center/cover;"></div>
+                    <div class="initiative-content">
+                        <h3>Diaspora Engagement</h3>
+                        <p>Connecting Africans in the diaspora with development opportunities on the continent.</p>
+                        <a href="#" class="initiative-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="leadership" id="leadership">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Leaders</h2>
+            </div>
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <div class="leader-img" style="background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3') center center/cover;"></div>
+                    <div class="leader-info">
+                        <h3>Kwame Mensah</h3>
+                        <p>Founder & Executive Director</p>
+                        <p>Former policy advisor with 15 years of experience in governance reform.</p>
+                    </div>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-img" style="background: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3') center center/cover;"></div>
+                    <div class="leader-info">
+                        <h3>Amina Diallo</h3>
+                        <p>Director of Programs</p>
+                        <p>Education activist with expertise in youth empowerment programs.</p>
+                    </div>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-img" style="background: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3') center center/cover;"></div>
+                    <div class="leader-info">
+                        <h3>Chukwuma Okoro</h3>
+                        <p>Director of Research</p>
+                        <p>Economist specializing in African development strategies.</p>
+                    </div>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-img" style="background: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3') center center/cover;"></div>
+                    <div class="leader-info">
+                        <h3>Fatoumata Bâ</h3>
+                        <p>Director of Communications</p>
+                        <p>Former journalist with extensive experience in media strategy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stories Section -->
+    <section class="stories" id="stories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Stories</h2>
+            </div>
+            <div class="stories-container">
+                <div class="story-card">
+                    <div class="story-img" style="background: url('https://images.unsplash.com/photo-1542641728-6ca359b085f4?ixlib=rb-4.0.3') center center/cover;"></div>
+                    <div class="story-content">
+                        <h3>Youth Leading Change in Ghana</h3>
+                        <div class="story-meta">
+                            <span><i class="far fa-calendar"></i> June 15, 2023</span>
+                            <span><i class="far fa-user"></i> Kofi Ansah</span>
+                        </div>
+                        <p>How young activists are transforming local governance through community engagement and technology.</p>
+                        <a href="#" class="story-link">Read Full Story <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="story-img" style="background: url('https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3') center center/cover;"></div>
+                    <div class="story-content">
+                        <h3>Women in Politics: Breaking Barriers</h3>
+                        <div class="story-meta">
+                            <span><i class="far fa-calendar"></i> May 2, 2023</span>
+                            <span><i class="far fa-user"></i> Amina Diallo</span>
+                        </div>
+                        <p>The inspiring journey of African women leaders who are changing the face of governance.</p>
+                        <a href="#" class="story-link">Read Full Story <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="story-img" style="background: url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3') center center/cover;"></div>
+                    <div class="story-content">
+                        <h3>Pan-Africanism in the Digital Age</h3>
+                        <div class="story-meta">
+                            <span><i class="far fa-calendar"></i> April 18, 2023</span>
+                            <span><i class="far fa-user"></i> Chukwuma Okoro</span>
+                        </div>
+                        <p>How technology is creating new pathways for African unity and collaboration across borders.</p>
+                        <a href="#" class="story-link">Read Full Story <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Join Our Movement</h2>
+            <p>Subscribe to our newsletter to stay updated on our initiatives, events, and how you can contribute to Africa's transformation.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Africa Retold</h3>
+                    <p>Reimagining Africa's future through unity, leadership, and sustainable development.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#mission">Our Mission</a></li>
+                        <li><a href="#initiatives">Initiatives</a></li>
+                        <li><a href="#leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Research Publications</a></li>
+                        <li><a href="#">Policy Briefs</a></li>
+                        <li><a href="#">Educational Materials</a></li>
+                        <li><a href="#">News & Updates</a></li>
+                        <li><a href="#">Events Calendar</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Accra, Ghana</li>
+                        <li><i class="fas fa-phone"></i> +233 20 123 4567</li>
+                        <li><i class="fas fa-envelope"></i> info@africaretold.org</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Africa Retold. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--primary-red);"></i> kreativecreations</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const nav = document.querySelector('nav ul');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Newsletter form submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            alert(`Thank you for subscribing with ${email}! You'll receive our next newsletter.`);
+            this.reset();
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.mission-card, .initiative-card, .leader-card, .story-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
